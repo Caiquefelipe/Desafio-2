@@ -13,8 +13,25 @@ const OperacaoEnum = {
       this.operacao = '';
       this.display = document.getElementById('display');
     }
+
   
+    setOperacao(operacao) {
+      this.operacao = operacao;
+      
+    }
+
+    addNumero(numero) {
+      if (this.operacao === '') {
+        this.valorA += numero;
+    } else {
+        this.valorB += numero;
+    }
+    
   }
+
+}
+
+
 
 
 
