@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* Estilos para os botões e o visor */
+  button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    margin: 5px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+
+  #display {
+    width: 200px;
+    height: 50px;
+    font-size: 24px;
+    text-align: right;
+    margin: 5px;
+    padding: 5px;
+  }
+</style>
+</head>
+<body>
+  <input type="text" id="display" readonly>
+  <br>
+  <button onclick="addToDisplay(7)">7</button>
+  <button onclick="addToDisplay(8)">8</button>
+  <button onclick="addToDisplay(9)">9</button>
+  <button onclick="setOperation()">+</button>
+  <br>
+  <button onclick="addToDisplay(4)">4</button>
+  <button onclick="addToDisplay(5)">5</button>
+  <button onclick="addToDisplay(6)">6</button>
+  <button onclick="setOperation()">-</button>
+  <br>
+  <button onclick="addToDisplay(1)">1</button>
+  <button onclick="addToDisplay(2)">2</button>
+  <button onclick="addToDisplay(3)">3</button>
+  <button onclick="setOperation()">*</button>
+  <br>
+  <button onclick="addToDisplay(0)">0</button>
+  <button onclick="addDecimalPoint()">.</button>
+  <button onclick="clearDisplay()">C</button>
+  <button onclick="setOperation()">/</button>
+  <br>
+  <button onclick="calculate()">=</button>
+<script src="script.js"></script>
+</body>
+</html>
