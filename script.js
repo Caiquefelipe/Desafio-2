@@ -1,35 +1,72 @@
 // Enumerador para as operações
 const OperacaoEnum = {
-    ADICAO: 'ADICAO',
-    SUBTRACAO: 'SUBTRACAO',
-    MULTIPLICACAO: 'MULTIPLICACAO',
-    DIVISAO: 'DIVISAO',
-  };
-  
-  class Calculadora {
-    constructor() {
-      this.valorA = '';
-      this.valorB = '';
-      this.operacao = '';
-      this.display = document.getElementById('display');
-    }
+  ADICAO: 'ADICAO',
+  SUBTRACAO: 'SUBTRACAO',
+  MULTIPLICACAO: 'MULTIPLICACAO',
+  DIVISAO: 'DIVISAO',
+};
 
+class Calculadora {
   
-    setOperacao(operacao) {
-      this.operacao = operacao;
-      
-    }
+  constructor() {
+    this.valorA = '';
+    this.valorB = '';
+    this.operacao = '';
+    this.display = document.getElementById('display');
+  }
 
-    addNumero(numero) {
-      if (this.operacao === '') {
-        this.valorA += numero;
+  setOperacao(operacao) {
+    this.operacao = operacao;
+    return this.operacao
+  }
+
+
+  clear(){
+    this.valorA = ''
+    this.valorB = ''
+    this.operacao = ''
+    return 
+  }
+  addNumero(numero) {
+    if (this.operacao === '') {
+      this.valorA += numero;
     } else {
-        this.valorB += numero;
+      this.valorB += numero;
     }
-    
+    return this.display.textContent = this.operacao === '' ? this.valorA : this.valorB;
   }
 
 }
+
+
+const calculadora = new Calculadora()
+
+function addDisplay(numero){
+  
+  console.log(calculadora.addNumero(numero))
+}
+function setOperacao(operacao) {
+  console.log(calculadora.setOperacao(operacao))
+}
+
+
+
+
+
+
+
+
+
+
+   
+   
+
+  
+
+
+
+
+
 
 
 
