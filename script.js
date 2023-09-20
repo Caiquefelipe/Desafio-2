@@ -1,87 +1,35 @@
-// Enumerador para as operações
-const OperacaoEnum = {
-  ADICAO: 'ADICAO',
-  SUBTRACAO: 'SUBTRACAO',
-  MULTIPLICACAO: 'MULTIPLICACAO',
-  DIVISAO: 'DIVISAO',
-};
 
 class Calculadora {
-  
-  constructor() {
-    this.valorA = '';
-    this.valorB = '';
-    this.operacao = '';
-    this.display = document.getElementById('display');
+
+  constructor(valorA, operacao, valorB, display) {
+    this.valorA = valorA;
+    this.operacao = operacao;
+    this.valorB = valorB;
+    this.display = document.getElementById(display);
+
   }
 
   setOperacao(operacao) {
     this.operacao = operacao;
-    return this.operacao
-  }
+    console.log(` ${operacao}`)
 
-
-  clear(){
-    this.valorA = ''
-    this.valorB = ''
-    this.operacao = ''
-    return 
   }
-  addNumero(numero) {
-    if (this.operacao === '') {
-      this.valorA += numero;
-    } else {
-      this.valorB += numero;
-    }
-    return this.display.textContent = this.operacao === '' ? this.valorA : this.valorB;
-  }
-
 }
 
 
-const calculadora = new Calculadora()
+const botao = document.querySelectorAll('.botao')
+const display = document.getElementById('display')
+const calcularBotao = document.querySelector('.calcular')
+botao.forEach((buttons) => {
+  buttons.addEventListener('click', () => {
+    display.innerHTML += buttons.innerHTML
+  })
+})
 
-function addDisplay(numero){
-  
-  console.log(calculadora.addNumero(numero))
-}
-function setOperacao(operacao) {
-  console.log(calculadora.setOperacao(operacao))
-}
-
-
-
-
+const calculadora = new Calculadora('', '', '', 'display')
+document.querySelector('.botaoLimpar').addEventListener("click", () => { display.innerHTML = "" })
 
 
 
 
 
-
-   
-   
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-  
-  
- 

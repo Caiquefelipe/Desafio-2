@@ -3,6 +3,11 @@
 <head>
 <style>
   /* Estilos para os botões e o visor */
+
+  *{
+    padding: 0;
+    margin: 0;
+  }
   button {
     width: 50px;
     height: 50px;
@@ -12,42 +17,68 @@
     color: #fff;
     border: none;
     cursor: pointer;
+    border-radius: 10px;
   }
-
   #display {
-    width: 200px;
+    width: 230px;
     height: 50px;
     font-size: 24px;
+    background-color: aliceblue;
     text-align: right;
     margin: 5px;
     padding: 5px;
+    margin-top: 10%;
+    border-radius: 10px;
+    margin-left: 40px;
+    
   }
+
+  .fundo{
+    background-color: black;
+    height: 100vh;
+    text-align: center;
+  }
+
+  .kk{
+    background-color: rgb(99, 94, 94);
+    width: 20em;
+    margin:auto;
+    border-radius: 10px;
+    
+  }
+
 </style>
 </head>
 <body>
-  <input type="text" id="display" readonly>
-  <br>
-  <button onclick="addToDisplay(7)">7</button>
-  <button onclick="addToDisplay(8)">8</button>
-  <button onclick="addToDisplay(9)">9</button>
-  <button onclick="setOperation()">+</button>
-  <br>
-  <button onclick="addToDisplay(4)">4</button>
-  <button onclick="addToDisplay(5)">5</button>
-  <button onclick="addToDisplay(6)">6</button>
-  <button onclick="setOperation()">-</button>
-  <br>
-  <button onclick="addToDisplay(1)">1</button>
-  <button onclick="addToDisplay(2)">2</button>
-  <button onclick="addToDisplay(3)">3</button>
-  <button onclick="setOperation()">*</button>
-  <br>
-  <button onclick="addToDisplay(0)">0</button>
-  <button onclick="addDecimalPoint()">.</button>
-  <button onclick="clearDisplay()">C</button>
-  <button onclick="setOperation()">/</button>
-  <br>
-  <button onclick="calculate()">=</button>
+<div class="fundo">
+  <div class="kk">
+    <div id ="button"></div>
+    <div  id="display"></div>
+    <br>
+    <button class="botao">7</button>
+    <button class="botao">8</button>
+    <button class="botao">9</button>
+    <button class="botao">+</button>
+    <br> 
+    <button class="botao">4</button>
+    <button class="botao">5</button>
+    <button class="botao">6</button>
+    <button class="botao">-</button>
+    <br>
+    <button class="botao">1</button>
+    <button class="botao">2</button>
+    <button class="botao">3</button>
+    <button class="botao">*</button>
+    <br>
+    <button class="botao">0</button>
+    <button class="botao">.</button>
+    <button class="botaoLimpar">C</button>
+    <button class="botao">/</button>
+    <br>
+    <button class="calcular"style="width: 4em;margin-left: 8em;">=</button>
+  </div>  
+    </div>
+</div>
 <script src="script.js"></script>
 </body>
 </html>
