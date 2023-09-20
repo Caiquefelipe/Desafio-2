@@ -1,3 +1,9 @@
+const Enumerador = {
+  ADICAO:'+',
+  MULTIPLICACAO:'*',
+  SUBTRACAO:'-',
+  DIVISAO:'/'
+}
 
 class Calculadora {
 
@@ -25,6 +31,8 @@ botao.forEach((buttons) => {
     display.innerHTML += buttons.innerHTML
   })
 })
+
+if()
 
 const calculadora = new Calculadora('', '', '', 'display')
 document.querySelector('.botaoLimpar').addEventListener("click", () => { display.innerHTML = "" })
