@@ -21,11 +21,13 @@
     font-size: 24px;
     border: 1px solid #888;
     border-radius: 5px;
+    overflow: hidden;
+  
   }
   
 
   .botao {
-    width: 50px;
+    width: 60px;
     height: 50px;
     background-color: #555;
     color: white;
@@ -36,19 +38,47 @@
     cursor: pointer;
   }
 
+  .botao:hover{
+    background:rgb(104, 98, 98);
+  }
+
   .botaoLimpar {
     background-color: #ff5555;
     color: white;
     padding: 1.3em;
   }
-
-  .calcular {
-    background-color: #55ff55;
-    color: black;
-    padding: 1.4em;
-
+  .botaoLimpar:hover{
+    background: rgb(238, 101, 101);
+    cursor: pointer;
   }
+
 
   .botao:active {
     background-color: #777;
+  }
+  .botaoLimpar{
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    width: 5em;
+    margin-right: 15em;
+
+  }
+
+  .calcular{
+    cursor: pointer;
+    padding: 1.4em;
+    background-color: #55ff55;
+    border-radius: 5px;
+    border:none;
+    width: 4em;
+    color:aliceblue
+  }
+
+  .calcular:hover{
+    background: #75ff75;
+  }
+  .botoes{
+   margin-right: 15px;
+
   }

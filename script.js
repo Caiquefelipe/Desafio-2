@@ -32,12 +32,23 @@ botao.forEach((buttons) => {
   })
 })
 
-if()
+function executarCalculo(valorA, operacao, valorB) {
+  valorA = parseFloat(valorA);
+  valorB = parseFloat(valorB);
+
+  switch (operacao) {
+      case Enumerador.ADICAO:
+          return valorA + valorB;
+      case Enumerador.SUBTRACAO:
+          return valorA - valorB;
+      case Enumerador.DIVISAO:
+          return valorA / valorB;
+      case Enumerador.MULTIPLICACAO:
+          return valorA * valorB
+}
+
 
 const calculadora = new Calculadora('', '', '', 'display')
-document.querySelector('.botaoLimpar').addEventListener("click", () => { display.innerHTML = "" })
+document.querySelector('.botaoLimpar').addEventListener("click", () => { display.innerHTML ="" })
 
-
-
-
-
+}
