@@ -1,20 +1,40 @@
 const Enumerador = {
-  ADICAO:'+',
-  MULTIPLICACAO:'*',
-  SUBTRACAO:'-',
-  DIVISAO:'/'
+  ADICAO: '+',
+  MULTIPLICACAO: '*',
+  SUBTRACAO: '-',
+  DIVISAO: '/'
 }
 
 class Calculadora {
 
   constructor(valorA, operacao, valorB, display) {
-    this.valorA = valorA;
-    this.operacao = operacao;
-    this.valorB = valorB;
-    this.display = document.getElementById(display);
+    this._valorA = valorA;
+    this._operacao = operacao;
+    this._valorB = valorB;
+    this._display = document.getElementById('display');
 
   }
 
+  executarCalculo (){
+    this._valorA = parseFloat(this._valorA);
+    this._valorB = parseFloat(this._valorB)
+    switch (this._operacao) {
+      case Enumerador.ADICAO:
+        return this._valorA +  this._valorB
+      case Enumerador.SUBTRACAO:
+        return  this._valorA -  this._valorB;
+      case Enumerador.MULTIPLICACAO:
+        return  this._valorA *  this._valorB;
+      case Enumerador.DIVISAO:
+       if(valorB === 0){
+        return "Erro:Divisao por zero"
+       }
+       return valorA / valorB;
+       default:
+        
+    }
+    
+  }
   setOperacao(operacao) {
     this.operacao = operacao;
     console.log(` ${operacao}`)
@@ -28,27 +48,15 @@ const display = document.getElementById('display')
 const calcularBotao = document.querySelector('.calcular')
 botao.forEach((buttons) => {
   buttons.addEventListener('click', () => {
+    if(buttons.innerHTML === Enumerador.ADICAO || buttons.SUBTRACAO || Enumerador.DIVISAO || Enumerador.MULTIPLICACAO)
     display.innerHTML += buttons.innerHTML
+    
   })
 })
 
-function executarCalculo(valorA, operacao, valorB) {
-  valorA = parseFloat(valorA);
-  valorB = parseFloat(valorB);
+ 
 
-  switch (operacao) {
-      case Enumerador.ADICAO:
-          return valorA + valorB;
-      case Enumerador.SUBTRACAO:
-          return valorA - valorB;
-      case Enumerador.DIVISAO:
-          return valorA / valorB;
-      case Enumerador.MULTIPLICACAO:
-          return valorA * valorB
-}
+  const calculadora = new Calculadora(10, '+', 10)
+  console.log(calculadora.executarCalculo())
+  document.querySelector('.botaoLimpar').addEventListener("click", () => { display.innerHTML = "" })
 
-
-const calculadora = new Calculadora('', '', '', 'display')
-document.querySelector('.botaoLimpar').addEventListener("click", () => { display.innerHTML ="" })
-
-}
