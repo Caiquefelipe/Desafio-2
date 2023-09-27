@@ -13,44 +13,45 @@ class Calculadora {
     this._operacao = '';
     this._resultado = '0.0';
     this._display = '';
+
   }
-  get valorA() {
+  getvalorA() {
     return this._valorA;
   }
 
-  get valorB() {
+  getvalorB() {
     return this._valorB;
   }
 
-  get operacao() {
+  getoperacao() {
     return this._operacao;
   }
 
-  get resultado() {
+  getresultado() {
     return this._resultado;
   }
 
-  get display() {
+  getdisplay() {
     return this._display;
   }
 
-  set valorA(valor) {
+  setvalorA(valor) {
     this._valorA = valor;
   }
 
-  set valorB(valor) {
+  setvalorB(valor) {
     this._valorB = valor;
   }
 
-  set operacao(operacao) {
+  setoperacao(operacao) {
     this._operacao = operacao;
   }
 
-  set resultado(resultado) {
+  setresultado(resultado) {
     this._resultado = resultado;
   }
 
-  set display(display) {
+  setdisplay(display) {
     this._display = display;
   }
 
@@ -60,8 +61,10 @@ class Calculadora {
         this.operacao = digito;
         this.display += ` ${this.operacao} `;
         console.log(`operacao definida como: ${this.operacao}`)
+
         return
-        
+
+
       }
     } else {
       if (!this.operacao) {
@@ -69,14 +72,15 @@ class Calculadora {
         console.log(`valor de valorA atual: ${this.valorA}`)
       } else {
         this.valorB += digito;
+        console.log(`valor de valorB atual:${this.valorB}`)
       }
       this.display += digito;
-      console.log(`valor de valorB atual:${this.valorB}`)
-    }
-   
-  }
 
+    }
+
+  }
   
+
 
   calcular() {
     if (this.valorA && this.valorB && this.operacao) {
@@ -86,6 +90,7 @@ class Calculadora {
       switch (this.operacao) {
         case operacaoEnum.Adicao:
           this.resultado = (numeroA + numeroB).toString().replace('.', ',');
+          console.log(`O resultado é:${this.resultado}`)
           break;
         case operacaoEnum.Subtracao:
           this.resultado = (numeroA - numeroB).toString().replace('.', ',');
@@ -102,8 +107,6 @@ class Calculadora {
           }
 
       }
-
-
       this.display = this.resultado;
       this.valorA = '';
       this.valorB = '';
